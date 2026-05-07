@@ -23,9 +23,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
-      </h1>
+      <p>
+      Welcome to <strong>Latent Bytes 
       <a
         target="_blank"
         href="/rss.xml"
@@ -34,27 +33,15 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         title="RSS Feed"
       >
         <IconRss
-          width={20}
-          height={20}
+          width={16}
+          height={16}
           class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
         />
         <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+      </a></strong> — a personal blog about computing, software, and the occasional economics tangent.
       </p>
       <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
+Take a look at the blog posts or find me at the links below.
       </p>
       {
         // only display if at least one social link is enabled

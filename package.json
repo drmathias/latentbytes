@@ -1,7 +1,9 @@
 {
-  "name": "astro-paper",
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "latent-bytes",
   "type": "module",
-  "version": "5.5.1",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
@@ -21,6 +23,7 @@
     "dayjs": "^1.11.19",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
+    "remark-github-blockquote-alert": "^2.1.0",
     "remark-toc": "^9.0.0",
     "satori": "^0.18.3",
     "sharp": "^0.34.5",
