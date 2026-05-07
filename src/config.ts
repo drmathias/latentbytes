@@ -15,6 +15,7 @@ export const SITE = {
     text: "Edit page",
     url: "https://github.com/drmathias/latentbytes/edit/main/",
   },
+  ogImage: undefined,
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "en",
