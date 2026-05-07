@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://www.latentbytes.net/",
+  website: "https://www.latentbytes.net",
   author: "Adam Shirt",
   profile: "https://cv.64815139.xyz",
   desc: "A personal blog about computing, software, and the occasional economics tangent.",
