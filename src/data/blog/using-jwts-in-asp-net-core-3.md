@@ -17,7 +17,7 @@ description: "A practical and comprehensive guide to getting started with JWT in
 ## Breaking Down Authorization
 
 > [!NOTE]
-> .NET Core 3.1 reached official End of Life in December 2022. Newer versions, including .NET 8 (LTS), have since been released.
+> .NET Core 3.1 reached official End of Life in December 2022. New projects should use the latest .NET version.
 
 JSON Web Tokens (JWTs) are a highly popular and widely used component of client-server authentication. The idea behind using a JWT is to provide a simple and secure method of exchanging data which can be verified to have been untampered and created by a known party. A JWT is made up of three parts:
 
@@ -50,9 +50,6 @@ Microsoft provides a [package](https://www.nuget.org/packages/Microsoft.AspNetCo
 ```xml file="YourProject.csproj"
 <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.3" />
 ```
-
-> [!NOTE]
-> This configuration pattern using `Startup.cs` has been superseded by the simplified `Program.cs` structure introduced in .NET 6.
 
 Next, set up the authentication middleware to validate tokens for incoming requests.
 
@@ -232,3 +229,4 @@ An asymmetric algorithm uses both a public key and a private secret. The public 
 ![Diagram illustrating asymmetric key encryption with a public and private key](../../assets/images/asymmetric-algorithms.webp)
 
 A JWT can be asymmetrically signed, though it would require a very particular scenario for this to be beneficial. There would have to be a requirement for the same key to authenticate with two or more separate externally-controlled applications. One possibility of this scenario would be having a central login service used by a number of applications which are developed by different teams. The login service could return an asymmetrically signed JWT which allows each application to verify that a user is signed in, but does not allow any of these applications to generate a valid token. This reduces the amount of work needed to do a security audit, as auditing the login server would establish inherent trust in the other applications.
+

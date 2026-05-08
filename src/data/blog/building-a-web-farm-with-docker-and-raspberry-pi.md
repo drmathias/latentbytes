@@ -55,9 +55,6 @@ Several ways exist to supply power to Raspberry Pi boards but by far the most co
 
 ### The Hardware Setup
 
-> [!NOTE]
-> The costs of the hardware components listed below have changed significantly since this article was published in 2019.
-
 Here is the hardware used in this guide, totalling around £210 (or as cheap as £150 with only 2 Raspberry Pi boards):
 
 - 3× Raspberry Pi 4B, 1GB RAM (£105)
@@ -126,7 +123,7 @@ Verify the installation with `docker info`. Repeat this on each Raspberry Pi boa
 ### Installing Docker Compose
 
 > [!WARNING]
-> Docker Compose v1 (installed via pip) is no longer valid; use the Docker Compose V2 plugin (`docker compose`) which is included with modern Docker installations.
+> Docker Compose V1 (installed via pip) is no longer valid; use the Docker Compose V2 plugin (`docker compose`) which is included with modern Docker installations.
 
 Docker Compose is useful for configuring containers per device. The official image does not support ARM, so install it via pip instead:
 
@@ -190,7 +187,7 @@ Clone the Docker Compose file onto your Raspberry Pi and run `docker-compose up`
 ### LetsEncrypt + Nginx
 
 > [!NOTE]
-> The `linuxserver/letsencrypt` image was rebranded to `linuxserver/swag` in October 2020.
+> The `linuxserver/letsencrypt` image was rebranded to `linuxserver/swag` in August 2020.
 
 SSL certificate generation can be automated by Certbot. Since the official Certbot image doesn't support ARM, use the [LinuxServer LetsEncrypt image](https://hub.docker.com/r/linuxserver/letsencrypt/), which bundles Nginx and Certbot together.
 
@@ -262,3 +259,4 @@ server {
 ## What's Left?
 
 With the Nginx image running and your web servers up, the web farm is configured. The remaining steps are DNS setup and port forwarding on your router. Most home routers have dynamic IP addresses, so you'll want to configure a dynamic DNS service. Fortunately, the Nginx configuration does not need to change when using dynamic DNS.
+
