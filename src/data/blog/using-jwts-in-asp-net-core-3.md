@@ -16,6 +16,9 @@ description: "A practical and comprehensive guide to getting started with JWT in
 
 ## Breaking Down Authorization
 
+> [!NOTE]
+> .NET Core 3.1 reached official End of Life in December 2022. Newer versions, including .NET 8 (LTS), have since been released.
+
 JSON Web Tokens (JWTs) are a highly popular and widely used component of client-server authentication. The idea behind using a JWT is to provide a simple and secure method of exchanging data which can be verified to have been untampered and created by a known party. A JWT is made up of three parts:
 
 - **Header** — contains metadata about the token
@@ -47,6 +50,9 @@ Microsoft provides a [package](https://www.nuget.org/packages/Microsoft.AspNetCo
 ```xml file="YourProject.csproj"
 <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.3" />
 ```
+
+> [!NOTE]
+> This configuration pattern using `Startup.cs` has been superseded by the simplified `Program.cs` structure introduced in .NET 6.
 
 Next, set up the authentication middleware to validate tokens for incoming requests.
 
