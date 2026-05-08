@@ -12,12 +12,12 @@ tags:
 description: "A practical and comprehensive guide to getting started with JWT in ASP.NET Core 3. "
 ---
 
+> [!NOTE]
+> .NET Core 3.1 reached official End of Life in December 2022. New projects should use the latest .NET version.
+
 ![JWT Security](../../assets/images/security-header.webp)
 
 ## Breaking Down Authorization
-
-> [!NOTE]
-> .NET Core 3.1 reached official End of Life in December 2022. New projects should use the latest .NET version.
 
 JSON Web Tokens (JWTs) are a highly popular and widely used component of client-server authentication. The idea behind using a JWT is to provide a simple and secure method of exchanging data which can be verified to have been untampered and created by a known party. A JWT is made up of three parts:
 

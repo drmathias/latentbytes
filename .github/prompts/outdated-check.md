@@ -46,7 +46,7 @@ Write a warning message callout for the following:
 ## Callouts
 
 An information or warning block is a callout.
-Callouts should appear directly above the first paragraph where the outdated content is mentioned.
+Callouts should appear directly above the first paragraph where the outdated content is mentioned. If the first mention is in the title or description, it should appear at the very top of the article.
 When a callout is mentioning a rebrand, the date of the rebrand should always be included.
 When a callout is mentioning a version update, the new version number should always be included.
 
