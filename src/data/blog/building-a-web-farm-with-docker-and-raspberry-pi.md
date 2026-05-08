@@ -68,6 +68,9 @@ Here is the hardware used in this guide, totalling around £210 (or as cheap as 
 
 ### Operating System Setup
 
+> [!NOTE]
+> Raspbian was rebranded to Raspberry Pi OS in May 2020.
+
 First, flash the operating system onto each SD card. Use [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/), which can be written to the card easily using [Etcher](https://www.balena.io/etcher/). Insert your SD card into a PC, run Etcher, select your downloaded OS image and select the drive. The process shouldn't take more than a minute.
 
 Once your card is flashed, create an empty file named `SSH` on the root of the drive. This enables SSH access so you can remotely connect to the Raspberry Pi.
@@ -118,6 +121,9 @@ sudo usermod -aG docker $USER
 Verify the installation with `docker info`. Repeat this on each Raspberry Pi board.
 
 ### Installing Docker Compose
+
+> [!WARNING]
+> Docker Compose V1 (installed via pip) is no longer valid; use the Docker Compose V2 plugin (`docker compose`) which is included with modern Docker installations.
 
 Docker Compose is useful for configuring containers per device. The official image does not support ARM, so install it via pip instead:
 
@@ -179,6 +185,9 @@ Clone the Docker Compose file onto your Raspberry Pi and run `docker-compose up`
 ## Setting up a Load Balancer
 
 ### LetsEncrypt + Nginx
+
+> [!NOTE]
+> The `linuxserver/letsencrypt` image was rebranded to `linuxserver/swag` in August 2020.
 
 SSL certificate generation can be automated by Certbot. Since the official Certbot image doesn't support ARM, use the [LinuxServer LetsEncrypt image](https://hub.docker.com/r/linuxserver/letsencrypt/), which bundles Nginx and Certbot together.
 
@@ -250,3 +259,4 @@ server {
 ## What's Left?
 
 With the Nginx image running and your web servers up, the web farm is configured. The remaining steps are DNS setup and port forwarding on your router. Most home routers have dynamic IP addresses, so you'll want to configure a dynamic DNS service. Fortunately, the Nginx configuration does not need to change when using dynamic DNS.
+
