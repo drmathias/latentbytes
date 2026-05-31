@@ -1,13 +1,14 @@
 ---
-title: "Code Review Is About People"
+title: "Code Review is About People"
 author: "Adam Shirt"
-pubDatetime: 2026-05-31T10:50:00Z
-modDatetime: 2026-05-31T10:50:00Z
+pubDatetime: 2026-05-31T11:05:00Z
+modDatetime: 2026-05-31T11:05:00Z
 slug: code-review-is-about-people
 featured: false
 draft: false
 tags:
   - ci/cd
+  - commentary
 description: "AI code review tools are gaining traction quickly, but the real costs are harder to see. Before jumping to implement a fully autonomous code review process, consider why we do it in the first place."
 ---
 
