@@ -31,6 +31,9 @@ Often JWTs are used along with a protocol such as OAuth 2.0, usually being gener
 
 It is important to understand that a JWT is simply a signed token and therefore does not need to be used with any particular protocol. For more information to better understand JWTs, visit the [Auth0 page](https://jwt.io/) where you can even create your own through the web UI.
 
+> [!NOTE]
+> Since .NET 6, the ecosystem has moved toward Minimal APIs and a single `Program.cs` file; the `Startup.cs` patterns shown here are considered legacy.
+
 ## JWTs in ASP.NET Core 3.X
 
 ### Authenticating with a Web API
@@ -76,6 +79,9 @@ This is a very basic validation setup, however additional configuration can be d
 
 > [!IMPORTANT]
 > Make sure that you are accessing the token secret from encrypted storage!
+
+> [!NOTE]
+> Swashbuckle.AspNetCore has since released version 7.0; configuration for newer versions may differ significantly from the examples provided below.
 
 ### Defining Authorization in OpenAPI Documents
 
@@ -229,4 +235,3 @@ An asymmetric algorithm uses both a public key and a private secret. The public 
 ![Diagram illustrating asymmetric key encryption with a public and private key](../../assets/images/asymmetric-algorithms.webp)
 
 A JWT can be asymmetrically signed, though it would require a very particular scenario for this to be beneficial. There would have to be a requirement for the same key to authenticate with two or more separate externally-controlled applications. One possibility of this scenario would be having a central login service used by a number of applications which are developed by different teams. The login service could return an asymmetrically signed JWT which allows each application to verify that a user is signed in, but does not allow any of these applications to generate a valid token. This reduces the amount of work needed to do a security audit, as auditing the login server would establish inherent trust in the other applications.
-

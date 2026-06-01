@@ -33,6 +33,9 @@ In this article, I will explain how to set up and deploy an ASP.NET Core applica
 
 Before starting, you should have a basic understanding of Linux, Git, and Docker. You'll also need a web application ready to deploy.
 
+> [!NOTE]
+> Raspberry Pi 5 was released in October 2023; while the principles of this guide remain valid, hardware specifications and power requirements differ for newer models.
+
 ## Choosing Hardware
 
 ### Raspberry Pi Boards
@@ -259,4 +262,3 @@ server {
 ## What's Left?
 
 With the Nginx image running and your web servers up, the web farm is configured. The remaining steps are DNS setup and port forwarding on your router. Most home routers have dynamic IP addresses, so you'll want to configure a dynamic DNS service. Fortunately, the Nginx configuration does not need to change when using dynamic DNS.
-

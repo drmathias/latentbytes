@@ -12,6 +12,9 @@ tags:
 description: "A simple guide to Azure Pipelines. Explore how you can set up CI/CD pipelines to automate the deployment of your static website."
 ---
 
+> [!NOTE]
+> While Azure Pipelines remains fully supported, GitHub Actions has largely superseded it as the recommended tool for simple static site CI/CD workflows.
+
 ![Azure Pipelines](../../assets/images/azure-pipelines.webp)
 
 ## Introducing CI/CD
