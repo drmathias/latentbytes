@@ -8,6 +8,7 @@ featured: false
 draft: false
 tags:
   - bitcoin
+  - commentary
   - economics
 description: "Bitcoin spot ETFs now hold over $100 billion under management. Here’s why they could cause a financial crisis."
 ---
