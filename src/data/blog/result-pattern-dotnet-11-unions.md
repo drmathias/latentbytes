@@ -1,8 +1,8 @@
 ---
 title: "A Better Result Pattern With Closed Class Heirarchies and C# 15 Unions"
 author: "Adam Shirt"
-pubDatetime: 2026-06-26T15:00:00Z
-modDatetime: 2026-06-26T15:00:00Z
+pubDatetime: 2026-06-26T16:35:00Z
+modDatetime: 2026-06-26T16:35:00Z
 slug: a-better-result-pattern-with-closed-class-heirarchies-and-csharp-15-unions
 featured: false
 draft: false
@@ -343,14 +343,14 @@ What you should notice is that this is a _closed heirarchy_ in that all implemen
 
 Within the discriminated union design umbrella, there is an active language proposal for [closed heirarchies](https://github.com/dotnet/csharplang/blob/main/proposals/closed-hierarchies.md) to address this. The proposal defines the introduction of a `closed` modifier that is implicitly `abstract`. The result type could be redefined.
 
-> [!NOTE]
-> Closed heirarchies are now a confirmed feature in C# 15.
-
 ```csharp
 closed record ApplyDiscountCodeResult;
 ```
 
 Which would allow the compiler to guarantee pattern matching exhaustiveness, removing the need for the default constraint.
+
+> [!NOTE]
+> Closed heirarchies are now a confirmed feature in C# 15.
 
 You may be wondering why this feature would be needed when the type can be and is `internal`. The reason it needs to be a new language addition is because `internal` members can be exposed to other assembilies, usually through the use of the `InternalsVisibleTo` attribute, and since it is not a dependant relationship, the compiler is unaware of the types declared in the assembly to which they're exposed.
 
