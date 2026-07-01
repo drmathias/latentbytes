@@ -6,7 +6,7 @@ modDatetime: 2022-06-11T19:48:12Z
 slug: building-a-web-farm-with-docker-and-raspberry-pi
 featured: false
 draft: false
-tags:
+tags: 
   - raspberry pi
   - nginx
   - docker
@@ -37,7 +37,12 @@ Before starting, you should have a basic understanding of Linux, Git, and Docker
 
 ### Raspberry Pi Boards
 
-As per the definition of a web farm, we are going to be needing a minimum of two computers available for running our web application. Depending on how heavy a web application you want to run and your budget will depend on what model(s) of Raspberry Pi you require. When writing this article, I tested the setup on a cluster of Raspberry Pi model 4B.
+As per the definition of a web farm, we are going to be needing a minimum of two computers available for running our web application. Depending on how heavy a web application you want to run and your budget will depend on what model(s) of Raspberry Pi you require. 
+
+> [!NOTE]
+> Raspberry Pi 5 was released in October 2023, offering significantly improved performance and features like a dedicated I/O controller.
+
+When writing this article, I tested the setup on a cluster of Raspberry Pi model 4B.
 
 For the most part, you will not need a lot of RAM to run a web application, unless you are heavily utilising caching. CPU power is a factor when it comes to how quickly you want a request to be handled, so generally a CPU with a higher clock speed is better. More cores will allow more concurrent requests and so more traffic at one time.
 
@@ -71,6 +76,9 @@ Here is the hardware used in this guide, totalling around £210 (or as cheap as 
 > [!NOTE]
 > Raspbian was rebranded to Raspberry Pi OS in May 2020.
 
+> [!NOTE]
+> Raspberry Pi Imager was released in 2020 and is now the recommended tool for flashing images and configuring initial settings like SSH and user accounts.
+
 First, flash the operating system onto each SD card. Use [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/), which can be written to the card easily using [Etcher](https://www.balena.io/etcher/). Insert your SD card into a PC, run Etcher, select your downloaded OS image and select the drive. The process shouldn't take more than a minute.
 
 Once your card is flashed, create an empty file named `SSH` on the root of the drive. This enables SSH access so you can remotely connect to the Raspberry Pi.
@@ -86,6 +94,9 @@ The next step is to assemble the hardware: attach the PoE HATs to the boards, in
 To connect to a Raspberry Pi you will need its local IP address and an SSH client such as [PuTTY](https://www.putty.org/). Find the IP address via your router dashboard and connect via SSH on port 22.
 
 ![PuTTY Configuration](../../assets/images/putty.webp)
+
+> [!WARNING]
+> Raspberry Pi OS removed the default 'pi' user in April 2022 to improve security; you must now define a user during the setup process using Raspberry Pi Imager or a custom `userconf` file.
 
 The default credentials for Raspbian are `pi` as the username and `raspberry` as the password.
 
@@ -259,4 +270,3 @@ server {
 ## What's Left?
 
 With the Nginx image running and your web servers up, the web farm is configured. The remaining steps are DNS setup and port forwarding on your router. Most home routers have dynamic IP addresses, so you'll want to configure a dynamic DNS service. Fortunately, the Nginx configuration does not need to change when using dynamic DNS.
-
